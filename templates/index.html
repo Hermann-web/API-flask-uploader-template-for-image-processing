@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8" />
+  <title>Home - Hello Flask!</title>
+  <link type="text/css" rel="stylesheet"
+       href="{{ url_for('static',
+                        filename='hello.css')}}" />
+</head>
+<body>
+
+<li><a href="{{ url_for('upload_file') }}">add your image </a></li>
+
+</body>
+</html>
