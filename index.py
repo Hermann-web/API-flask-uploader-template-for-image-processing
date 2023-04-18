@@ -12,6 +12,8 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+app.secret_key = 'your-secret-key'
+
 
 @app.route('/')
 def index():
@@ -77,6 +79,7 @@ def get_response(path):
     return text 
 
 if __name__ == '__main__':
-    app.debug=True
+    app.debug=False
+    # app.run(host='0.0.0.0')
     app.run()
     
