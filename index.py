@@ -6,7 +6,7 @@ from flask import Flask, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from flask import send_from_directory
 
-UPLOAD_FOLDER = 'images'
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'images')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
@@ -79,7 +79,7 @@ def get_response(path):
     return text 
 
 if __name__ == '__main__':
-    app.debug=False
+    app.debug=True
     # app.run(host='0.0.0.0')
     app.run()
     
